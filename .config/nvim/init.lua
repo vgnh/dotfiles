@@ -5,81 +5,51 @@
 ]]
 
 --[[ Plugins ]]
--- Plugins to install
--- 1. nvim-lspconfig, nvim-compe -> replace Ale, coc.nvim
--- 2. gitsigns -> replaces vim-gitgutter                                                              
-require('packer').startup(function()                                            
-    use 'wbthomason/packer.nvim'                                        
-
-    -- Appearance                                                              
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }                                                                                
-    use 'RRethy/nvim-base16'
-
-    -- Utilities                                                               
-    use 'sheerun/vim-polyglot'                                                  
-    use 'jiangmiao/auto-pairs'                                                  
-    use {                                                                       
-        'kyazdani42/nvim-tree.lua',                                             
-        requires = {                                                            
-            'kyazdani42/nvim-web-devicons' -- optional, for file icons         
-        }                                                       
-    }                                                                           
-    use {                                                                       
-        'nvim-telescope/telescope.nvim',                                        
-        requires = { {'nvim-lua/plenary.nvim'} }                                
-    }
-    
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-end)
+require('plugins')
 
 --[[ Plugins Setup ]]
-require('nvim-tree').setup {
-    view = {
-        width = 25
-    },
-    disable_netrw = true,
-    hijack_cursor = true,
-    renderer = {
-        indent_markers = {
-            enable = true
-        }
-    }
-}
-require('lualine').setup {
-    options = {
-        theme = 'auto'
-    }
-}
-require('lspconfig').gopls.setup{}
+require('plugins/configs/nvim-treesitter')
+require('plugins/configs/nvim-tree')
+require('plugins/configs/lualine')
+require('plugins/configs/nvim-cmp') -- Setup nvim-cmp and lspconfig
 
 --[[ Options ]]
-vim.opt.guicursor = {}
 vim.opt.encoding = "utf-8"
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = false
+vim.opt.laststatus = 2
+vim.opt.hidden = true
+vim.opt.errorbells = false
+vim.opt.wrap = false
+vim.opt.scrolloff = 8
+vim.opt.colorcolumn = "80"
+vim.cmd('highlight ColorColumn ctermbg=0 guibg=lightgrey')
+vim.opt.signcolumn = "yes"
+-- Indentation
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
-vim.opt.errorbells = false
-vim.opt.wrap = false
+-- Searching
+-- Search will ignore case until a capital letter is used in the search
 vim.opt.incsearch = true
-vim.opt.colorcolumn = "80"
-vim.cmd('highlight ColorColumn ctermbg=0 guibg=lightgrey')
-vim.opt.signcolumn = "yes"
-
---[[ Appearance ]]
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+-- Appearance
+vim.opt.guicursor = {}
+vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.cmd('colorscheme base16-tomorrow-night-eighties')
 
 --[[ Keymaps ]]
 -- Save file
-vim.keymap.set('n', '<c-s>', ':w<CR>', {})
-vim.keymap.set('i', '<c-s>', '<Esc>:w<CR>a', {})
--- Plugin: NvimTree
-vim.keymap.set('n', '<leader>f', ':NvimTreeToggle<CR>', { noremap = true })
+vim.keymap.set('n', '<c-s>', '<cmd>w<cr>', {})
+vim.keymap.set('i', '<c-s>', '<Esc><cmd>w<cr>a', {})
+-- Plugin: nvim-tree
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { noremap = true })
+-- Plugin: telescope
+vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { noremap = true })
