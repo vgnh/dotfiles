@@ -1,8 +1,7 @@
---[[ Instructions
-    1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    2. Open ~/.config/nvim/init.lua
-    3. :PackerSync
-]]
+--[[ Instructions ]]
+-- 1. git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+-- 2. Open ~/.config/nvim/init.lua
+-- 3. :PackerSync
 
 --[[ Plugins ]]
 require('plugins')
@@ -32,10 +31,9 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 -- Searching
--- Search will ignore case until a capital letter is used in the search
 vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.opt.ignorecase = true -- Search will ignore case,
+vim.opt.smartcase = true -- until a capital letter is used in the search
 -- Appearance
 vim.opt.guicursor = {}
 vim.opt.cursorline = true
