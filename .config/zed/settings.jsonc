@@ -10,6 +10,9 @@
   // default
   "vim_mode": false,
   "buffer_font_family": "JetBrains Mono", // "Zed Plex Mono"
+  "buffer_font_features": {
+    "calt": false
+  },
   "ui_font_size": 18, // 16
   "buffer_font_size": 17, // 16
   "theme": {
