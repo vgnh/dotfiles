@@ -1,0 +1,98 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  // default
+  "vim_mode": false,
+  "buffer_font_family": "JetBrains Mono", // "Zed Plex Mono"
+  "ui_font_size": 18, // 16
+  "buffer_font_size": 17, // 16
+  "theme": {
+    "mode": "system",
+    "light": "Atelier Forest Light", // "One Light"
+    "dark": "Gruvbox Dark Soft" // "One Dark"
+  },
+  "preferred_line_length": 80,
+  "show_whitespaces": "selection",
+  "soft_wrap": "prefer_line",
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 2, // 1
+    "coloring": "indent_aware", // fixed
+    "background_coloring": "disabled"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 0
+    }
+  },
+  "inlay_hints": {
+    "enabled": true, // false
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50
+  },
+  "journal": {
+    "path": "~",
+    "hour_format": "hour24" // hour12
+  },
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true
+  },
+  "project_panel": {
+    "button": true,
+    "dock": "left",
+    "git_status": true,
+    "default_width": "N/A - width in pixels"
+  },
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": false,
+    "env": {},
+    "font_family": null,
+    "font_features": null,
+    "font_size": null,
+    "option_as_meta": false,
+    "button": false,
+    "shell": {},
+    "toolbar": {
+      "title": true
+    },
+    "working_directory": "current_project_directory"
+  },
+  "calls": {
+    // Join calls with the microphone live by default
+    "mute_on_join": true, // false
+    // Share your project when you are the first to join a channel
+    "share_on_join": false
+  },
+  // custom
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "languages": {
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    }
+  }
+}
