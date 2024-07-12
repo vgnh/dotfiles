@@ -10,11 +10,13 @@
   // default
   "vim_mode": false,
   "buffer_font_family": "JetBrains Mono", // "Zed Plex Mono"
+  "buffer_font_weight": 400, // 400
+  "buffer_line_height": "standard", // "comfortable"
   "buffer_font_features": {
     "calt": false
   },
   "ui_font_size": 18, // 16
-  "buffer_font_size": 16, // 16
+  "buffer_font_size": 17, // 16
   "theme": {
     "mode": "system",
     "light": "Atelier Forest Light", // "One Light"
@@ -38,7 +40,7 @@
   },
   "inlay_hints": {
     "enabled": true, // false
-    "show_type_hints": true,
+    "show_type_hints": false, // true
     "show_parameter_hints": true,
     "show_other_hints": true,
     "edit_debounce_ms": 700,
