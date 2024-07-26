@@ -89,6 +89,7 @@
       "milliseconds": 1000
     }
   },
+  "tabs": { "file_icons": true },
   "languages": {
     "TypeScript": {
       "code_actions_on_format": {
