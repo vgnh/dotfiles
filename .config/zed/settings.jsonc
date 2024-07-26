@@ -9,6 +9,7 @@
 {
   // default
   "vim_mode": false,
+  "base_keymap": "VSCode", // "VSCode"
   "buffer_font_family": "JetBrains Mono", // "Zed Plex Mono"
   "buffer_font_weight": 400, // 400
   "buffer_line_height": "standard", // "comfortable"
