@@ -16,6 +16,7 @@
   "buffer_font_features": {
     "calt": false
   },
+  "cursor_shape": "block", // "bar"
   "ui_font_size": 18, // 16
   "buffer_font_size": 16, // 16
   "theme": {
