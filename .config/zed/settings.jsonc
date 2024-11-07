@@ -60,19 +60,19 @@
     "button": true,
     "dock": "left",
     "git_status": true,
-    "default_width": "N/A - width in pixels"
+    "default_width": 240 // 240
   },
   "terminal": {
     "alternate_scroll": "off",
     "blinking": "terminal_controlled",
     "copy_on_select": false,
     "env": {},
-    "font_family": null,
-    "font_features": null,
-    "font_size": null,
+    // "font_family": null,
+    // "font_features": null,
+    // "font_size": null,
     "option_as_meta": false,
     "button": false,
-    "shell": {},
+    "shell": "system",
     "toolbar": {
       "title": true
     },
