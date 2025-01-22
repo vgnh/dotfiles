@@ -26,7 +26,7 @@
   },
   "preferred_line_length": 80,
   "show_whitespaces": "selection",
-  "soft_wrap": "prefer_line",
+  "soft_wrap": "editor_width",
   "indent_guides": {
     "enabled": true,
     "line_width": 1,
