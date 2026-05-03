@@ -1,0 +1,15 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/breeze.toml"
+]
+
+[font]
+normal = {
+    family = "Cascadia Mono NF",
+    style = "Regular"
+}
+size = 14.00
+
+[cursor]
+style = { blinking = "On" }
+
