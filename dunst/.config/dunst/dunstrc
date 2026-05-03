@@ -1,0 +1,9 @@
+# Restart dunst
+#   killall dunst; dunst &
+#
+# Test dunst config changes
+#   notify-send "Testing" "Test notification"
+
+[global]
+follow = mouse
+font = Adwaita Mono 13

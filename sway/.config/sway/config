@@ -22,16 +22,17 @@ output * bg $HOME/Pictures/Misc/misc04.jpg fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 #
 # Lenovo screen
-output "eDP-1" {
-    position 0 0
-    mode 1920x1200@60.003Hz
-}
+# output "eDP-1" {
+#     position 0 0
+#     mode 1920x1200@60.003Hz
+# }
 #
-# BenQ monitor
-output "HDMI-A-1" {
-    position 1920 0
-    mode 2560x1440@74.971Hz
-}
+# BenQ monitor "HDMI-A-1"
+# output "BNQ BenQ GW2790QT V8P00319019" {
+#     position 1920 0
+#     mode 2560x1440@74.971Hz
+# }
+# Output screen configs are set by kanshi
 
 ### Idle configuration
 #
@@ -47,7 +48,8 @@ output "HDMI-A-1" {
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
-    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    timeout 301 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    timeout 900 'systemctl suspend' resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -c 000000'
 
 ### Input configuration
@@ -86,19 +88,18 @@ input "1267:12693:ELAN0676:00_04F3:3195_Touchpad" {
 #
 # Screencasts using wf-recorder
 #
-mode "record" {
-    # Stop recording and return to default mode
-    bindsym Escape exec pkill -INT wf-recorder && notify-send "Recording" "Recording stopped", mode "default"
-
-    # Optional: Add a 'Return' key fallback
-    bindsym Return exec pkill -INT wf-recorder && notify-send "Recording" "Recording stopped", mode "default"
-}
+# Requires jq for output selection, during full-screen recording
+#
 # 1. Record a selected area
-bindsym $mod+Ctrl+r exec notify-send "Recording" "Select area to start" && wf-recorder -g "$(slurp)" -f ~/Videos/Screencasts/$(date --iso-8601=ns).mp4, mode "record"
+bindsym $mod+Ctrl+r exec notify-send "Recording" "Select area to start" && wf-recorder -g "$(slurp)" -f $HOME/Videos/Screencasts/$(date --iso-8601=ns).mp4
 # 2. Record the entire screen
-bindsym $mod+Alt+r exec notify-send "Recording" "Full screen recording started" && wf-recorder -f ~/Videos/Screencasts/$(date --iso-8601=ns).mp4, mode "record"
+bindsym $mod+Alt+r exec sh -c 'output=$(swaymsg -t get_outputs | jq -r ".[] | select(.active) | .name" | rofi -dmenu -p "Output:") && [ -n "$output" ] && notify-send "Recording" "Full screen recording started on $output" && wf-recorder -f "$HOME/Videos/Screencasts/$(date --iso-8601=ns).mp4" -o "$output"'
+# 3. Stop recording
+bindsym $mod+Ctrl+x exec pkill -INT wf-recorder && notify-send "Recording" "Recording stopped"
 
 ### Other configuration
 #
 # Enable window gaps
-gaps inner 10
+gaps inner 5
+gaps outer 0
+smart_gaps off

@@ -1,0 +1,25 @@
+# Profile for laptop screen only, with no external monitors connected
+profile laptop {
+    # Lenovo screen
+    output "eDP-1" {
+        position 0 0
+        mode 1920x1200@60.003Hz
+        scale 1.0
+    }
+}
+
+# Profile for home setup
+profile home_dock {
+    # Lenovo screen
+    output "eDP-1" {
+        position 0 0
+        mode 1920x1200@60.003Hz
+        scale 1.0
+    }
+    # BenQ monitor "HDMI-A-1"
+    output "BNQ BenQ GW2790QT V8P00319019" {
+        position 1920 0
+        mode 2560x1440@74.971Hz
+        scale 1.0
+    }
+}
