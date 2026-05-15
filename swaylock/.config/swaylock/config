@@ -1,6 +1,12 @@
 image=$HOME/Pictures/Misc/misc04.jpg
 scaling=fill
 
+ignore-empty-password
+
+indicator-idle-visible
+indicator-radius=150
+indicator-thickness=30
+
 inside-color=0000002a
 inside-clear-color=0000002a
 inside-caps-lock-color=0000002a
@@ -12,6 +18,7 @@ bs-hl-color=ffbaba
 caps-lock-bs-hl-color=0000002a
 caps-lock-key-hl-color=ffffb8
 
+line-uses-ring
 line-color=00000000
 line-clear-color=00000000
 line-caps-lock-color=00000000
