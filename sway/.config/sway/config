@@ -117,3 +117,11 @@ input "1267:12693:ELAN0676:00_04F3:3195_Touchpad" {
     client.unfocused          #1d1f2166   #1d1f2188   #ffffff     #000000ee   #1d1f2166
     client.focused_inactive   #c5c8c644   #1d1f2199   #ffffff     #ffffff88   #c5c8c644
     client.background         #1d1f21f2
+
+### Other configuration
+#
+# Fcitx5 input method framework
+#
+    # Start fcitx5 in the background
+    # (This is not required on Fedora, as it provides the `fcitx5-autostart` package)
+    # exec fcitx5 -d -r

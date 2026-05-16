@@ -1,0 +1,14 @@
+# Fallback support for XWayland-dependent apps (like Steam, Discord, or older apps)
+XMODIFIERS=@im=fcitx
+
+# Qt application support
+## Legacy Qt5 application support
+QT_IM_MODULE=fcitx
+## Modern Qt6/Wayland native apps handling (Fedora 40+)
+QT_IM_MODULES="wayland;fcitx"
+
+# GLFW / GTK / Wayland apps
+GTK_IM_MODULE=fcitx
+
+# SDL apps (Only SDL2 requires this, SDL1 uses XIM)
+SDL_IM_MODULE=fcitx
