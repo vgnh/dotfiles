@@ -32,6 +32,7 @@ output * bg $HOME/Pictures/Misc/misc04.jpg fill
 #     position 1920 0
 #     mode 2560x1440@74.971Hz
 # }
+#
 # Output screen configs are set by kanshi
 
 ### Idle configuration
@@ -87,15 +88,15 @@ input "1267:12693:ELAN0676:00_04F3:3195_Touchpad" {
     bindsym $mod+d exec $menu
 #
 # Screencasts using wf-recorder
-#
 # Requires jq for output selection, during full-screen recording
-#
-# 1. Record a selected area
-bindsym $mod+Ctrl+r exec notify-send "Recording" "Select area to start" && wf-recorder -g "$(slurp)" -f $HOME/Videos/Screencasts/$(date --iso-8601=ns).mp4
-# 2. Record the entire screen
-bindsym $mod+Alt+r exec sh -c 'output=$(swaymsg -t get_outputs | jq -r ".[] | select(.active) | .name" | rofi -dmenu -p "Output:") && [ -n "$output" ] && notify-send "Recording" "Full screen recording started on $output" && wf-recorder -f "$HOME/Videos/Screencasts/$(date --iso-8601=ns).mp4" -o "$output"'
-# 3. Stop recording
-bindsym $mod+Ctrl+x exec pkill -INT wf-recorder && notify-send "Recording" "Recording stopped"
+    # 1. Record a selected area
+    bindsym $mod+Ctrl+r exec notify-send "Recording" "Select area to start" && wf-recorder -g "$(slurp)" -f $HOME/Videos/Screencasts/$(date --iso-8601=ns).mp4
+
+    # 2. Record the entire screen
+    bindsym $mod+Alt+r exec sh -c 'output=$(swaymsg -t get_outputs | jq -r ".[] | select(.active) | .name" | rofi -dmenu -p "Output:") && [ -n "$output" ] && notify-send "Recording" "Full screen recording started on $output" && wf-recorder -f "$HOME/Videos/Screencasts/$(date --iso-8601=ns).mp4" -o "$output"'
+
+    # 3. Stop recording
+    bindsym $mod+Ctrl+x exec pkill -INT wf-recorder && notify-send "Recording" "Recording stopped"
 
 ### Styling
 #
