@@ -13,6 +13,7 @@
 5. gammastep
 6. kanshi
 7. waybar (copied and edited from /etc/xdg/waybar/)
+8. mpv
 
 ## DE independant configs
 1. bash
