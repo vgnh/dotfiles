@@ -11,6 +11,11 @@
     # Set the launcher app for notification actions and context menus
     dmenu = rofi -dmenu -p "Notification Actions"
 
+    # Set mouse events to invoke the action / context menu
+    mouse_left_click = close_current
+    mouse_middle_click = context
+    mouse_right_click = context
+
 [shortcuts]
     # Open the context menu (shows URLs and intent actions)
     context = mod4+shift+period
