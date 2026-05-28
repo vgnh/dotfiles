@@ -5,5 +5,12 @@
 #   notify-send "Testing" "Test notification"
 
 [global]
-follow = mouse
-font = Adwaita Mono 13
+    follow = mouse
+    font = Adwaita Mono 13
+
+    # Set the launcher app for notification actions and context menus
+    dmenu = rofi -dmenu -p "Notification Actions"
+
+[shortcuts]
+    # Open the context menu (shows URLs and intent actions)
+    context = mod4+shift+period
