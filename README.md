@@ -12,7 +12,7 @@
 4. dunst
 5. gammastep
 6. kanshi
-7. waybar (copied and edited from /etc/xdg/waybar/)
+7. waybar
 8. mpv
 
 ## DE independant configs
