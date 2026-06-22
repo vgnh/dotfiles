@@ -86,6 +86,9 @@ input "1267:12693:ELAN0676:00_04F3:3195_Touchpad" {
     # Start your launcher
     unbindsym $mod+d
     bindsym $mod+d exec $menu
+
+    # Lock screen
+    bindsym $mod+Alt+l exec swaylock
 #
 # Screencasts using wf-recorder
 # Requires jq for output selection, during full-screen recording
