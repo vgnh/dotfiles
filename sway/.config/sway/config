@@ -100,6 +100,14 @@ input "1267:12693:ELAN0676:00_04F3:3195_Touchpad" {
 
     # 3. Stop recording
     bindsym $mod+Ctrl+x exec pkill -INT wf-recorder && notify-send "Recording" "Recording stopped"
+#
+# Notifications using dunstctl
+#
+    # Open the context menu (shows URLs and intent actions)
+    bindsym $mod+Ctrl+period exec dunstctl action
+
+    # Recall a single notification from history
+    bindsym $mod+Ctrl+slash exec dunstctl history-pop
 
 ### Styling
 #
