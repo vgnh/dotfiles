@@ -1,12 +1,14 @@
+# Reload dunst config
+#   dunstctl reload
+#
 # Restart dunst
 #   killall dunst; dunst &
 #
 # Test dunst config changes
-#   notify-send "Testing" "Test notification"
+#   notify-send "Testing" "This is a test notification"
 
 [global]
     follow = mouse
-    font = Adwaita Mono 13
 
     # Set the launcher app for notification actions and context menus
     dmenu = rofi -dmenu -p "Notification Actions"
@@ -15,3 +17,11 @@
     mouse_left_click = close_current # default: close_current
     mouse_middle_click = do_action, remove_current # default: do_action, remove_current
     mouse_right_click = close_all # default: close_all
+
+    # Styling
+    font = Adwaita Mono 13
+    frame_width = 3 # default: 3
+    frame_color = "#c5c8c6"
+    background = "#1d1f21"
+    foreground = "#ffffff"
+    separator_color = frame # default: frame
