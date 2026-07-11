@@ -5,6 +5,7 @@ profile laptop {
         position 0,0
         mode 1920x1200@60.003Hz
         scale 1.0
+        enable
     }
 }
 
@@ -15,11 +16,13 @@ profile home_dock {
         position 0,0
         mode 1920x1200@60.003Hz
         scale 1.0
+        enable
     }
     # BenQ monitor "HDMI-A-1"
     output "BNQ BenQ GW2790QT V8P00319019" {
         position 1920,0
         mode 2560x1440@74.971Hz
         scale 1.0
+        enable
     }
 }
