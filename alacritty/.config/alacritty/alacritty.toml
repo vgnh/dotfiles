@@ -13,3 +13,8 @@ size = 14.00
 [cursor]
 style = { blinking = "On" }
 
+[bell]
+animation = "Linear" # default: "Linear"
+duration = 100 # in milliseconds, default: 0
+color = "#ffffff" # default: "#ffffff"
+command = "None" # default: "None"
