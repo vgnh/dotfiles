@@ -125,6 +125,8 @@ input "1267:12693:ELAN0676:00_04F3:3195_Touchpad" {
 #
 # You can get the app_id of any running application using: swaymsg -t get_tree
 for_window {
+    [app_id="imv"] floating enable
+    [app_id="mpv"] floating enable
     [app_id="org.gnome.Calculator"] floating enable
     [app_id="org.gnome.Snapshot"] floating enable
     [app_id="de.haeckerfelix.Fragments"] floating enable
