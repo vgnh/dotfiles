@@ -3,7 +3,9 @@ profile laptop {
     # Lenovo screen
     output "eDP-1" {
         position 0,0
+        transform normal
         mode 1920x1200@60.003Hz
+        adaptive_sync on
         scale 1.0
         enable
     }
@@ -14,14 +16,18 @@ profile home_dock {
     # Lenovo screen
     output "eDP-1" {
         position 0,0
+        transform normal
         mode 1920x1200@60.003Hz
+        adaptive_sync on
         scale 1.0
         enable
     }
     # BenQ monitor "HDMI-A-1"
     output "BNQ BenQ GW2790QT V8P00319019" {
         position 1920,0
+        transform normal
         mode 2560x1440@74.971Hz
+        adaptive_sync off
         scale 1.0
         enable
     }
