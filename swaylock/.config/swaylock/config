@@ -15,9 +15,9 @@ inside-ver-color=0000002a
 inside-wrong-color=0000002a
 
 key-hl-color=ffffff
-bs-hl-color=ffbaba
-caps-lock-key-hl-color=ffffff
-caps-lock-bs-hl-color=ffbaba
+bs-hl-color=ffffb8
+caps-lock-key-hl-color=f9c74f
+caps-lock-bs-hl-color=ffffb8
 
 line-uses-ring
 line-color=00000000
@@ -35,6 +35,6 @@ separator-color=00000000
 
 text-color=ffffff
 text-clear-color=ffffb86a
-text-caps-lock-color=0000006a
+text-caps-lock-color=f9c74f6a
 text-ver-color=ffffff6a
 text-wrong-color=ffbaba6a
